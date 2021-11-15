@@ -1,0 +1,49 @@
+<div class="form-wrapper container mt-5">
+    <form class="form" [formGroup]="userForm">
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !userForm.get('firstName')?.valid && userForm.get('firstName')?.touched }">
+            <label>First Name</label>
+            <input type="text" required formControlName="firstName" class="form-control" name="firstName" />
+            <span
+                *ngIf="!userForm.get('firstName')?.valid && userForm.get('firstName')?.touched && userForm.get('firstName')?.errors?.required">
+                First Name is required
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" name="lastName" />
+        </div>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !userForm.get('age')?.valid && userForm.get('age')?.touched }">
+            <label>Age</label>
+            <input type="text" required formControlName="age" class="form-control" name="age" />
+            <span
+                *ngIf="!userForm.get('age')?.valid && userForm.get('age')?.touched && userForm.get('age')?.errors?.required">
+                Age is required
+            </span>
+            <span
+                *ngIf="!userForm.get('age')?.valid && userForm.get('age')?.touched && userForm.get('age')?.errors?.pattern">
+                Age should be greater than 18
+            </span>
+        </div>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !userForm.get('email')?.valid && userForm.get('email')?.touched }">
+            <label>Email</label>
+            <input type="text" required formControlName="email" class="form-control" name="email" />
+            <span
+                *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched && userForm.get('email')?.errors?.required">
+                Email is required
+            </span>
+            <span
+                *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched && userForm.get('email')?.errors?.email">
+                Please enter a valid email
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Entered Name Is: {{ userForm.get('firstName')?.value }}</label>
+        </div>
+        <div class="form-group mt-3">
+            <button class="btn btn-success" type="submit" [disabled]="!userForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

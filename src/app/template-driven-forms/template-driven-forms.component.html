@@ -1,0 +1,49 @@
+<div class="form-wrapper container mt-5">
+    <form class="form" #userForm="ngForm" (ngSubmit)="submitData(userForm)">
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !firstName?.valid && firstName?.touched }">
+            <label>First Name</label>
+            <input type="text" required #firstName="ngModel" ngModel class="form-control" name="firstName" />
+            <span
+                *ngIf="!firstName?.valid && firstName?.touched && firstName?.errors?.required">
+                First Name is required
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text"  #lastName="ngModel" ngModel class="form-control" name="lastName" />
+        </div>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !age?.valid && age?.touched }">
+            <label>Age</label>
+            <input type="number" required #age="ngModel" min="18" ngModel class="form-control" name="age" />
+            <span
+                *ngIf="!age?.valid && age?.touched && age?.errors?.required">
+                Age is required
+            </span>
+            <span
+                *ngIf="!age?.valid && age?.touched && age?.errors?.min">
+                Age should be greater than 18
+            </span>
+        </div>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !email?.valid && email?.touched }">
+            <label>Email</label>
+            <input type="text" required #email="ngModel" ngModel class="form-control" name="email" />
+            <span
+                *ngIf="!email?.valid && email?.touched && email?.errors?.required">
+                Email is required
+            </span>
+            <span
+                *ngIf="!email?.valid && email?.touched && email?.errors?.email">
+                Please enter a valid email
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Entered Name Is: {{ firstName?.value }}</label>
+        </div>
+        <div class="form-group mt-3">
+            <button class="btn btn-success" type="submit" [disabled]="!userForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

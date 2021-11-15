@@ -1,0 +1,7 @@
+.form-invalid input {
+    border-color: red;
+}
+
+.form-invalid span {
+    color: red;
+}
