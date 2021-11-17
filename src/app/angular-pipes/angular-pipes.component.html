@@ -1,0 +1,19 @@
+<p>{{ 'SHAIKH' | lowercase }}</p>
+
+<p>{{ name | uppercase }}</p>
+
+<p>{{todaydate | date:'short'}}</p>
+
+<p>{{65654654689.23 | currency:"USD"}}</p>
+
+<p>{{ dataObj | json }}</p>
+
+<p>{{ data | slice:2:5 }}</p>
+
+<li *ngFor="let name of userList | filterPipe : includeText">
+    {{name}}
+</li>
+
+<p>{{ 1000000 | shortNumber }}</p>
+
+<p>{{ htmlString }}</p>

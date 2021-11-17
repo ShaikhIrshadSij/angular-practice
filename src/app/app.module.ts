@@ -5,12 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { AngularPipesComponent } from './angular-pipes/angular-pipes.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ShortNumberPipe } from './pipes/short-number.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsDemoComponent,
     TemplateDrivenFormsComponent,
+    AngularPipesComponent,
+    FilterPipePipe,
+    ShortNumberPipe,
   ],
   imports: [
     BrowserModule,
