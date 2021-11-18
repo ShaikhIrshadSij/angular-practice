@@ -8,6 +8,8 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
 import { AngularPipesComponent } from './angular-pipes/angular-pipes.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
+import { LimitCharactersDirective } from './directives/limit-characters.directive';
+import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ShortNumberPipe } from './pipes/short-number.pipe';
     AngularPipesComponent,
     FilterPipePipe,
     ShortNumberPipe,
+    LimitCharactersDirective,
+    AngularDirectivesComponent,
   ],
   imports: [
     BrowserModule,
