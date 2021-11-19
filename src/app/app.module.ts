@@ -10,6 +10,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { LimitCharactersDirective } from './directives/limit-characters.directive';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.routing';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AngularDirectivesComponent } from './angular-directives/angular-directi
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
