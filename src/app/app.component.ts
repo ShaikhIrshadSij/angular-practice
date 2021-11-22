@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,17 @@ export class AppComponent {
   }
   variableClass: any = {}
   variableStyle: any = {}
+
+  constructor(private route: Router) { }
+
+  navigateToRoute(routeName: string) {
+    this.route.navigate([routeName], {
+      queryParams: {
+        id: Math.random() * 1000
+      }
+    })
+  }
+
   addClass(classType: string) {
     switch (classType) {
       case 'class':

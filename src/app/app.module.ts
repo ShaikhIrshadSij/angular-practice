@@ -12,6 +12,7 @@ import { LimitCharactersDirective } from './directives/limit-characters.directiv
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.routing';
+import { UserCrudComponent } from './user-crud/user-crud.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.routing';
     ShortNumberPipe,
     LimitCharactersDirective,
     AngularDirectivesComponent,
+    UserCrudComponent,
   ],
   imports: [
     BrowserModule,
