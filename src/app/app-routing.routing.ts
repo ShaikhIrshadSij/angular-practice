@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { AngularPipesComponent } from './angular-pipes/angular-pipes.component';
+import { ApiCrudComponent } from './api-crud/api-crud.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { UserCrudComponent } from './user-crud/user-crud.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'users/create', component: UserCrudComponent, },
     { path: 'users/edit/:editId', component: UserCrudComponent, },
     { path: 'users/delete/:deleteId', component: UserCrudComponent, },
+    { path: 'students', component: ApiCrudComponent, },
 ];
 
 @NgModule({
