@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.routing';
 import { UserCrudComponent } from './user-crud/user-crud.component';
 import { ApiCrudComponent } from './api-crud/api-crud.component';
+import { BasicPracticeComponent } from './basic-practice/basic-practice.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ApiCrudComponent } from './api-crud/api-crud.component';
     AngularDirectivesComponent,
     UserCrudComponent,
     ApiCrudComponent,
+    BasicPracticeComponent,
   ],
   imports: [
     BrowserModule,

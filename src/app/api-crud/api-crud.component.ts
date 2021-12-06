@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiCrudComponent implements OnInit {
   studentData: any = []
+  editStudentInfo: any = null
   studentForm: FormGroup
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.studentForm = this.fb.group({
@@ -29,7 +30,39 @@ export class ApiCrudComponent implements OnInit {
     })
   }
 
+  deleteStudent(id: number) {
+    this.http.delete(`${environment.apiEndpoint}/api/student/delete?id=${id}`).subscribe((res: any) => {
+      if (res.isSuccess) {
+        alert('Data deleted successfully')
+        this.getStudents()
+      } else {
+        alert(res.message)
+      }
+    })
+  }
+
+  updateStudent() {
+    this.http.post(`${environment.apiEndpoint}/api/student/update`, {
+      ...this.editStudentInfo,
+      id: this.editStudentInfo._id,
+      ...this.studentForm.value
+    }).subscribe((res: any) => {
+      if (res.isSuccess) {
+        this.editStudentInfo = null
+        alert('Data updated successfully')
+        this.studentForm.reset()
+        this.getStudents()
+      } else {
+        alert(res.message)
+      }
+    })
+  }
+
   addStudent() {
+    if (this.editStudentInfo) {
+      this.updateStudent()
+      return
+    }
     this.http.post(`${environment.apiEndpoint}/api/student/add`, this.studentForm.value).subscribe((res: any) => {
       if (res.isSuccess) {
         alert('Data added successfully')
@@ -38,6 +71,14 @@ export class ApiCrudComponent implements OnInit {
       } else {
         alert(res.message)
       }
+    })
+  }
+
+  editStudent(student: any) {
+    this.editStudentInfo = student
+    this.studentForm.patchValue({
+      firstName: student.firstName,
+      lastName: student.lastName,
     })
   }
 

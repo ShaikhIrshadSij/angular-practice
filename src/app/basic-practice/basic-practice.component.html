@@ -1,0 +1,13 @@
+<button class="btn btn-success me-1" (click)="changeSection(1)">Condition 1</button>
+<button class="btn btn-success me-1" (click)="changeSection(2)">Condition 2</button>
+<button class="btn btn-success me-1" (click)="changeSection(3)">Condition 3</button>
+<button class="btn btn-success me-1" (click)="changeSection(4)">Condition 4</button>
+
+<div *ngIf="renderSection == 1">Section 1 Rendered</div>
+<div *ngIf="renderSection == 2">Section 2 Rendered</div>
+<div *ngIf="renderSection == 3">Section 3 Rendered</div>
+<div *ngIf="renderSection == 4">Section 4 Rendered</div>
+
+<p class="mb-0" *ngFor="let item of names; let i = index">
+    {{ item }} {{ i }}
+</p>
