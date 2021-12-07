@@ -11,6 +11,8 @@ import { environment } from 'src/environments/environment';
 export class ApiCrudComponent implements OnInit {
   studentData: any = []
   editStudentInfo: any = null
+  userImage: any = ''
+  userHobbies: any = []
   studentForm: FormGroup
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.studentForm = this.fb.group({
@@ -20,12 +22,21 @@ export class ApiCrudComponent implements OnInit {
     })
   }
 
+  updateHobby($event: any) {
+    if (this.userHobbies.find((x: any) => x == $event.target.value)) {
+      this.userHobbies = this.userHobbies.filter((x: any) => x != $event.target.value)
+    } else {
+      this.userHobbies.push($event.target.value)
+    }
+    console.log(this.userHobbies)
+  }
+
   ngOnInit(): void {
     this.getStudents()
   }
 
   getStudents() {
-    this.http.get(`${environment.apiEndpoint}/api/student/get`).subscribe((res: any) => {
+    this.http.get(`${environment.apiEndpoint}/api/user/get`).subscribe((res: any) => {
       this.studentData = res.data
     })
   }
@@ -42,7 +53,7 @@ export class ApiCrudComponent implements OnInit {
   }
 
   updateStudent() {
-    this.http.post(`${environment.apiEndpoint}/api/student/update`, {
+    this.http.post(`${environment.apiEndpoint}/api/user/update`, {
       ...this.editStudentInfo,
       id: this.editStudentInfo._id,
       ...this.studentForm.value
@@ -58,12 +69,28 @@ export class ApiCrudComponent implements OnInit {
     })
   }
 
+  handleFileInput(files: any) {
+    let file = files.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.userImage = reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
+
   addStudent() {
+    this.studentForm.value.hobbies = this.userHobbies.join(',')
     if (this.editStudentInfo) {
       this.updateStudent()
       return
     }
-    this.http.post(`${environment.apiEndpoint}/api/student/add`, this.studentForm.value).subscribe((res: any) => {
+    const formData = new FormData()
+    Object.keys(this.studentForm.value).map(x => formData.append(x, this.studentForm.value[x]))
+    formData.append('userImage', this.userImage)
+    this.http.post(`${environment.apiEndpoint}/api/user/add`, formData).subscribe((res: any) => {
       if (res.isSuccess) {
         alert('Data added successfully')
         this.studentForm.reset()
@@ -80,6 +107,9 @@ export class ApiCrudComponent implements OnInit {
       firstName: student.firstName,
       lastName: student.lastName,
     })
+    if (student.hobbies) {
+      this.userHobbies = student.hobbies.split(',')
+    }
   }
 
 }
