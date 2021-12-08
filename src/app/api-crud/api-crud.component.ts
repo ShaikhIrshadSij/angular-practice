@@ -12,8 +12,10 @@ export class ApiCrudComponent implements OnInit {
   studentData: any = []
   editStudentInfo: any = null
   userImage: any = ''
+  uploadedImage: any = null
   userHobbies: any = []
   studentForm: FormGroup
+  userGeneder: any = []
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.studentForm = this.fb.group({
       firstName: [''],
@@ -30,7 +32,6 @@ export class ApiCrudComponent implements OnInit {
     }
     console.log(this.userHobbies)
   }
-
   ngOnInit(): void {
     this.getStudents()
   }
@@ -53,11 +54,16 @@ export class ApiCrudComponent implements OnInit {
   }
 
   updateStudent() {
-    this.http.post(`${environment.apiEndpoint}/api/user/update`, {
+    const updated = {
       ...this.editStudentInfo,
       id: this.editStudentInfo._id,
       ...this.studentForm.value
-    }).subscribe((res: any) => {
+    }
+    const formData = new FormData()
+    Object.keys(updated).map(x => formData.append(x, updated[x]))
+    if (this.uploadedImage)
+      formData.append('userImage', this.uploadedImage)
+    this.http.post(`${environment.apiEndpoint}/api/user/update`, formData).subscribe((res: any) => {
       if (res.isSuccess) {
         this.editStudentInfo = null
         alert('Data updated successfully')
@@ -71,6 +77,7 @@ export class ApiCrudComponent implements OnInit {
 
   handleFileInput(files: any) {
     let file = files.target.files[0];
+    this.uploadedImage = file
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
@@ -89,7 +96,7 @@ export class ApiCrudComponent implements OnInit {
     }
     const formData = new FormData()
     Object.keys(this.studentForm.value).map(x => formData.append(x, this.studentForm.value[x]))
-    formData.append('userImage', this.userImage)
+    formData.append('userImage', this.uploadedImage)
     this.http.post(`${environment.apiEndpoint}/api/user/add`, formData).subscribe((res: any) => {
       if (res.isSuccess) {
         alert('Data added successfully')
