@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="form-group">
+        <label>Enter Age</label>
+        <input type="number" name="age" class="form-control" [(ngModel)]="age" />
+    </div>
+
+    <p [ngClass]="{ 'text-danger' : age < 5,  'text-info' : age >= 5 && age <= 18 }">Your entered age is: {{ age }}
+        years</p>
+    <p [ngClass]="[age < 5 ? 'text-danger' : '', age >= 5 && age <= 18 ? 'text-info' : '']">Your entered age is: {{ age
+        }}
+        years</p>
+    <p [ngClass]="getConditions()">Your entered age is: {{ age }}
+        years</p>
+    <p [ngStyle]="{ 'color': age < 5 ? 'red' : 'blue', 'background-color': age < 5 ? 'blue' : 'red' }">With NgStyle:
+        Your entered age is: {{ age }} years</p>
+    <p [style.color]="age < 5 ? 'red' : 'blue'" [style.background-color]="age < 5 ? 'blue' : 'red'">With NgStyle: Your
+        entered age is: {{ age }} years</p>
+</div>

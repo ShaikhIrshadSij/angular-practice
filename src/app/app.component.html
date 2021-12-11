@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="useRoutes">
     <ul>
         <li>
             <a href="javascript: void(0);" (click)="navigateToRoute('forms-demo')">Forms Demo</a>
@@ -23,4 +23,6 @@
         <router-outlet></router-outlet>
     </main>
 </div>
-<!-- <app-basic-practice></app-basic-practice> -->
+<div *ngIf="!useRoutes">
+    <app-basic-operations></app-basic-operations>
+</div>

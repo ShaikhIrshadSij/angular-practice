@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.routing';
 import { UserCrudComponent } from './user-crud/user-crud.component';
 import { ApiCrudComponent } from './api-crud/api-crud.component';
 import { BasicPracticeComponent } from './basic-practice/basic-practice.component';
+import { BasicOperationsComponent } from './basic-operations/basic-operations.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BasicPracticeComponent } from './basic-practice/basic-practice.componen
     UserCrudComponent,
     ApiCrudComponent,
     BasicPracticeComponent,
+    BasicOperationsComponent,
   ],
   imports: [
     BrowserModule,
