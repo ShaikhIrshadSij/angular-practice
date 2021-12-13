@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  useRoutes: boolean = false
+  useRoutes: boolean = true
   dataObj: any = {
     class: 0,
     style: 0,

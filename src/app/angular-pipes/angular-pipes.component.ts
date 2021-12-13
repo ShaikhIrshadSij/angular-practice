@@ -14,7 +14,7 @@ export class AngularPipesComponent implements OnInit {
   }
   htmlString = '<p>Test</p>'
   userList: any = ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "Test", "TT"];
-  includeText = "1";
+  includeText = "User";
   data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   constructor() { }
 
