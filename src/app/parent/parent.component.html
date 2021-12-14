@@ -1,0 +1,3 @@
+Your name is: {{ name }}
+
+<app-child [userName]="name" (requestChangeName)="changeName($event)"></app-child>

@@ -16,6 +16,8 @@ import { UserCrudComponent } from './user-crud/user-crud.component';
 import { ApiCrudComponent } from './api-crud/api-crud.component';
 import { BasicPracticeComponent } from './basic-practice/basic-practice.component';
 import { BasicOperationsComponent } from './basic-operations/basic-operations.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { BasicOperationsComponent } from './basic-operations/basic-operations.co
     ApiCrudComponent,
     BasicPracticeComponent,
     BasicOperationsComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
