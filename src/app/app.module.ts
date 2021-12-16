@@ -18,6 +18,11 @@ import { BasicPracticeComponent } from './basic-practice/basic-practice.componen
 import { BasicOperationsComponent } from './basic-operations/basic-operations.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { CustomFilterPipe } from './pipes/custom-filter.pipe';
+import { MainParentComponent } from './parent-child-concepts/main-parent/main-parent.component';
+import { ChildOneComponent } from './parent-child-concepts/child-one/child-one.component';
+import { ChildTwoComponent } from './parent-child-concepts/child-two/child-two.component';
+import { ChildThreeComponent } from './parent-child-concepts/child-three/child-three.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import { ChildComponent } from './child/child.component';
     BasicOperationsComponent,
     ParentComponent,
     ChildComponent,
+    CustomFilterPipe,
+    MainParentComponent,
+    ChildOneComponent,
+    ChildTwoComponent,
+    ChildThreeComponent,
   ],
   imports: [
     BrowserModule,

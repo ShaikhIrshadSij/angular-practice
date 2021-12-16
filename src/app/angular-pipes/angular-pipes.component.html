@@ -10,7 +10,7 @@
 
 <p>{{ data | slice:2:5 }}</p>
 
-<li *ngFor="let name of userList | filterPipe : includeText">
+<li *ngFor="let name of userList | customFilter : includeText">
     {{name}}
 </li>
 
