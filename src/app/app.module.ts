@@ -27,6 +27,7 @@ import { ParentComponentComponent } from './rxjs-examples/parent-component/paren
 import { ChildOneComponentComponent } from './rxjs-examples/child-one-component/child-one-component.component';
 import { ChildTwoComponentComponent } from './rxjs-examples/child-two-component/child-two-component.component';
 import { ChildThreeComponentComponent } from './rxjs-examples/child-three-component/child-three-component.component';
+import { FormsDemoReactiveComponent } from './forms-demo-reactive/forms-demo-reactive.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ChildThreeComponentComponent } from './rxjs-examples/child-three-compon
     ChildOneComponentComponent,
     ChildTwoComponentComponent,
     ChildThreeComponentComponent,
+    FormsDemoReactiveComponent,
   ],
   imports: [
     BrowserModule,

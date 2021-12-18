@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { AngularPipesComponent } from './angular-pipes/angular-pipes.component';
 import { ApiCrudComponent } from './api-crud/api-crud.component';
+import { FormsDemoReactiveComponent } from './forms-demo-reactive/forms-demo-reactive.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { MainParentComponent } from './parent-child-concepts/main-parent/main-parent.component';
 import { ParentComponent } from './parent/parent.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'parent-child', component: ParentComponent, },
     { path: 'parent-child-concepts', component: MainParentComponent, },
     { path: 'parent-child-rxjs', component: ParentComponentComponent, },
+    { path: 'reactive-forms', component: FormsDemoReactiveComponent, },
 ];
 
 @NgModule({
