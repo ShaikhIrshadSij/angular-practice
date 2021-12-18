@@ -14,7 +14,6 @@ export class TemplateDrivenFormsComponent implements OnInit {
   }
 
   submitData(form: NgForm) {
-    debugger
   }
 
 }

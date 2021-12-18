@@ -23,6 +23,10 @@ import { MainParentComponent } from './parent-child-concepts/main-parent/main-pa
 import { ChildOneComponent } from './parent-child-concepts/child-one/child-one.component';
 import { ChildTwoComponent } from './parent-child-concepts/child-two/child-two.component';
 import { ChildThreeComponent } from './parent-child-concepts/child-three/child-three.component';
+import { ParentComponentComponent } from './rxjs-examples/parent-component/parent-component.component';
+import { ChildOneComponentComponent } from './rxjs-examples/child-one-component/child-one-component.component';
+import { ChildTwoComponentComponent } from './rxjs-examples/child-two-component/child-two-component.component';
+import { ChildThreeComponentComponent } from './rxjs-examples/child-three-component/child-three-component.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { ChildThreeComponent } from './parent-child-concepts/child-three/child-t
     ChildOneComponent,
     ChildTwoComponent,
     ChildThreeComponent,
+    ParentComponentComponent,
+    ChildOneComponentComponent,
+    ChildTwoComponentComponent,
+    ChildThreeComponentComponent,
   ],
   imports: [
     BrowserModule,

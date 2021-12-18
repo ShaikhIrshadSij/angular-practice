@@ -6,6 +6,7 @@ import { ApiCrudComponent } from './api-crud/api-crud.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { MainParentComponent } from './parent-child-concepts/main-parent/main-parent.component';
 import { ParentComponent } from './parent/parent.component';
+import { ParentComponentComponent } from './rxjs-examples/parent-component/parent-component.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { UserCrudComponent } from './user-crud/user-crud.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'students', component: ApiCrudComponent, },
     { path: 'parent-child', component: ParentComponent, },
     { path: 'parent-child-concepts', component: MainParentComponent, },
+    { path: 'parent-child-rxjs', component: ParentComponentComponent, },
 ];
 
 @NgModule({
