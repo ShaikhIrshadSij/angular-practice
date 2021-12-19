@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'users/create', component: UserCrudComponent, },
     { path: 'users/edit/:editId', component: UserCrudComponent, },
     { path: 'users/delete/:deleteId', component: UserCrudComponent, },
-    { path: 'students', component: ApiCrudComponent, },
+    { path: 'students', loadChildren: () => import('./api-crud/api-crud.module').then(x => x.ApiCrudModule), },
     { path: 'parent-child', component: ParentComponent, },
     { path: 'parent-child-concepts', component: MainParentComponent, },
     { path: 'parent-child-rxjs', component: ParentComponentComponent, },
