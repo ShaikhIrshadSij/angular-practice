@@ -22,6 +22,7 @@
             <label>Image</label>
             <input type="file" class="form-control" name="userImage" (change)="handleFileInput($event)" />
         </div>
+        <img style="width: 300px;" *ngIf="userImage" [src]="userImage" />
         <button class="btn btn-success" (click)="addStudent()">Add Student</button>
     </form>
     <table class="table table-bordered">
