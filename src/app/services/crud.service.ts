@@ -15,7 +15,7 @@ export class CrudService {
     return this.http.get<Response>(`${environment.apiEndpoint}/api/user/get`)
   }
 
-  deleteStudent(id: number) {
+  deleteStudent(id: string) {
     return this.http.delete(`${environment.apiEndpoint}/api/student/delete?id=${id}`)
   }
 

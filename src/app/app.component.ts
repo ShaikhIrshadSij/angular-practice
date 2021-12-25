@@ -15,6 +15,7 @@ export class AppComponent {
     ternary: 0,
     variableStyle: 0,
   }
+  public model = { name: 'Shaikh', description: '<p>This is a sample form using CKEditor 4.</p>' };
   variableClass: any = {}
   variableStyle: any = {}
 

@@ -27,6 +27,7 @@ import { ChildTwoComponentComponent } from './rxjs-examples/child-two-component/
 import { ChildThreeComponentComponent } from './rxjs-examples/child-three-component/child-three-component.component';
 import { FormsDemoReactiveComponent } from './forms-demo-reactive/forms-demo-reactive.component';
 import { SharedModule } from './common/shared/shared.module';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SharedModule } from './common/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

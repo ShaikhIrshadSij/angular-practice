@@ -42,7 +42,7 @@ export class ApiCrudComponent implements OnInit {
     })
   }
 
-  deleteStudent(id: number) {
+  deleteStudent(id: string) {
     this.crudService.deleteStudent(id).subscribe((res: any) => {
       if (res.isSuccess) {
         alert('Data deleted successfully')
